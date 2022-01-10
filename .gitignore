@@ -67,6 +67,7 @@ dkms.conf
 *.sln.docstates
 *.vcxproj
 *.filters
+*.sln
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
