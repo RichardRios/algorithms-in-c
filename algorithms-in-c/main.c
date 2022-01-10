@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 #include "src/Headers/Timer.h"
-#include "src/Headers/Algo/LinearSearch/LinearSearch.h"
+#include "src/Headers/Algo/LinearSearch.h"
 
 #define N       100000000
 #define ITER    10
