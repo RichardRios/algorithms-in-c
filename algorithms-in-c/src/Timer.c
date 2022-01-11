@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include "Headers/Timer.h"
 
-Timer TimerCtor()
+Timer GetNewTimer()
 {
 	Timer timer =
 	{

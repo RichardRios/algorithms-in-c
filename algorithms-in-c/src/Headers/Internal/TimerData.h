@@ -1,4 +1,6 @@
-#pragma once
+#ifndef TIMERDATA_H
+#define TIMERDATA_H
+
 #include <time.h>
 
 /// <summary>
@@ -12,3 +14,5 @@ typedef struct TimerData
 	clock_t ClockEnd;
 	double EllapsedTime;
 } TimerData;
+
+#endif

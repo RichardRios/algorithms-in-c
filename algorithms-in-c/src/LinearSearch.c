@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdbool.h>
-#include "Headers/Algo/LinearSearch.h"
+#include "Headers/LinearSearch.h"
 
 bool LinearSearch(int* integerArray, int toFind, int arrayLength)
 {

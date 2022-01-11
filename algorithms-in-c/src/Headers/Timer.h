@@ -1,6 +1,7 @@
-#pragma once
-#include "Internal/TimerData.h"
+#ifndef TIMER_H
+#define TIMER_H
 
+#include "Internal/TimerData.h"
 
 typedef struct Timer
 {
@@ -9,15 +10,15 @@ typedef struct Timer
 	void(*Stop)(TimerData*);
 	double(*GetTimeTaken)(TimerData*);
 	char*(*Now)();
-	void(*SetSampleSize)(int);
-	int(*GetSampleSize)();
 	void(*Dtor)(TimerData*);
 } Timer;
 
-Timer TimerCtor();
+Timer GetNewTimer();
 TimerData Initialize();
 void StartTimer(TimerData*);
 void EndTimer(TimerData*);
 double TimeTaken(TimerData*);
 char* GetTimeNow();
 void Destructor(TimerData*);
+
+#endif
