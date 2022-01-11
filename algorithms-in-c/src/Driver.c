@@ -1,24 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <stdbool.h>
 #include "Headers/Driver.h"
 #include "Headers/Internal/AlgorithmOptions.h"
-#include "Helpers/Headers/PrintHelpers.h"
+#include "Headers/Internal/PrintHelpers.h"
 
 Driver Initialize()
 {
 	Driver driver =
 	{
-		.Run = Run,
-		.PrintHelp = PrintHelp,
-		.RunTypeSelection = RunTypeSelection,
-		.GetInformation = GetInformation
+		.Run = _Run,
+		.PrintHelp = _PrintHelp,
+		.RunTypeSelection = _RunTypeSelection,
+		.GetInformation = _GetInformation
 	};
 
 	return driver;
 }
 
-void Run()
+void _Run()
 {
 	char selection = 'q';
 	do
@@ -26,32 +27,44 @@ void Run()
 		printf(
 			"                         *** Algorithm Type Selection ***\n\n" \
 			"\t1) Search Algorithms\n" \
-			"\t2) Sort Algorithms\n"\
+			"\t2) Sort Algorithms\n" \
+			"\tH) Help"
 			"\tQ) Quit"
-			"\n\n\tEnter Selection > ");
+			"\n\n"\
+			"\tEnter Selection > ");
 		
 		selection = getchar();
-		RunTypeSelection(tolower(selection));
+		_RunTypeSelection(tolower(selection));
 
 	} while (tolower(selection) != 'q');
 
 }
 
-void PrintHelp()
+void _PrintHelp()
 {
 
 }
 
-void RunTypeSelection(char selection)
+void _RunTypeSelection(char selection)
 {
+	switch (selection)
+	{
+		case '1':
+			break;
+		case '2':
+			break;
+		case 'h':
+			break;
+		case 'q':
+			break;
+	}
 	if (selection != '1' && selection != '2' && selection != 'q')
 	{
 		PrintError("Invalid selection");
-		return false;
 	}
 }
 
-void GetInformation(Algorithm selection)
+void _GetInformation(Algorithm selection)
 {
 
 }

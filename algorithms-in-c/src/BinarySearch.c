@@ -1,6 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <string.h>
 #include "Headers/BinarySearch.h"
+#include "Headers/Internal/PrintHelpers.h"
 
-bool BinarySearch(int* integerArray, int toFind, int arraySize)
+BinarySearch InitBinarySearch()
+{
+	BinarySearch retVal =
+	{
+		.Run = RunBinarySearch,
+		.PrintInformation = PrintBinarySearchInformation
+	};
+
+	retVal.Information = GetNewAlgorithmInfo();
+
+	strcpy(retVal.Information.Name, "Binary Search");
+	strcpy(retVal.Information.Runtime, "O(log N)");
+	strcpy(retVal.Information.Caveats, "Array must be sorted prior to running search.");
+
+	return retVal;
+}
+
+bool RunBinarySearch(int* integerArray, int toFind, int arraySize)
 {
 	int rhsBoundary = arraySize - 1;
 	int lhsBoundary = 0;
@@ -24,4 +46,16 @@ bool BinarySearch(int* integerArray, int toFind, int arraySize)
 	}
 
 	return false;
+}
+
+void PrintBinarySearchInformation(AlgorithmInformation* information)
+{
+	PrintAlgorithmInformation(information);
+}
+
+void DisposeBinarySearch(BinarySearch* search)
+{
+	free(search->Information.Name);
+	free(search->Information.Runtime);
+	free(search->Information.Caveats);
 }

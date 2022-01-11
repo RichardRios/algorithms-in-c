@@ -1,19 +1,14 @@
-#ifndef LINEARSEARCH_H
-#define LINEARSEARCH_H
+#ifndef LINEAR_SEARCH_H
+#define LINEAR_SEARCH_H
 
 #include <stdbool.h>
+#include "Internal/AlgorithmInformation.h"
 
 /*
  *							Linear Search
  * 
  * Algorithm that searches each element of an array for a specified element. 
- * The algorithm runs in O(N) time under the assumption the compare condition 
- * is constant time.
- * 
- * The method performs a time analysis of each run and whether the element
- * being searched for is present in the array of randomly generated numbers.
- * If the element is found, the time taken is printed along with the location
- * in the array of the desired element.
+ * The algorithm runs in O(N) time.
  * 
  * Parameters:
  *		integerArray - integer array
@@ -24,6 +19,17 @@
  *		true if found, false otherwise
  * 
  */
-bool LinearSearch(int* integerArray, int toFind, int arrayLength);
+
+typedef struct _LinearSearch
+{
+	bool(*Run)(int*, int, int);
+	void(*PrintInformation)(AlgorithmInformation*);
+	AlgorithmInformation Information;
+} LinearSearch;
+
+LinearSearch InitLinearSearch();
+bool RunLinearSearch(int* integerArray, int toFind, int arrayLength);
+void PrintLinearSearchInformation(AlgorithmInformation*);
+void DisposeLinearSearch(LinearSearch*);
 
 #endif

@@ -1,11 +1,8 @@
-#ifndef TIMERDATA_H
-#define TIMERDATA_H
+#ifndef TIMER_DATA_H
+#define TIMER_DATA_H
 
 #include <time.h>
 
-/// <summary>
-/// Struct representing basic timer information
-/// </summary>
 typedef struct TimerData
 {
 	char* StartTime;

@@ -1,7 +1,7 @@
-#ifndef ALGORITHMOPTIONS_H
-#define ALGORITHMOPTIONS_H
+#ifndef ALGORITH_MOPTIONS_H
+#define ALGORITH_MOPTIONS_H
 
-typedef enum //Algorithms
+typedef enum
 {
 	LinearSearch = 0,
 	BinarySearch = 1

@@ -13,8 +13,9 @@ typedef struct Driver_s
 } Driver;
 
 Driver Initialize();
-void Run();
-void PrintHelp();
-void RunTypeSelection(Algorithm);
-void GetInformation(Algorithm);
+void _Run();
+void _PrintHelp();
+void _RunTypeSelection(Algorithm);
+void _GetInformation(Algorithm);
+
 #endif

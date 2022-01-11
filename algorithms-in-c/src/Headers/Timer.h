@@ -14,7 +14,7 @@ typedef struct Timer
 } Timer;
 
 Timer GetNewTimer();
-TimerData Initialize();
+TimerData InitializeTimerData();
 void StartTimer(TimerData*);
 void EndTimer(TimerData*);
 double TimeTaken(TimerData*);

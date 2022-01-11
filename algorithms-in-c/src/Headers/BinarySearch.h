@@ -1,7 +1,8 @@
-#ifndef BINARYSEARCH_H
-#define BINARYSEARCH_H
+#ifndef BINARY_SEARCH_H
+#define BINARY_SEARCH_H
 
 #include <stdbool.h>
+#include "Internal/AlgorithmInformation.h"
 
 /*
  *					Binary Search
@@ -19,5 +20,16 @@
  *		true if found, false otherwise
  * 
  */
-bool BinarySearch(int*, int, int, int);
+
+typedef struct _BinarySearch
+{
+	bool(*Run)(int*, int, int);
+	void(*PrintInformation)(AlgorithmInformation*);
+	AlgorithmInformation Information;
+} BinarySearch;
+
+BinarySearch InitBinarySearch();
+bool RunBinarySearch(int*, int, int);
+void PrintBinarySearchInformation(AlgorithmInformation*);
+void DisposeBinarySearch(BinarySearch*);
 #endif
