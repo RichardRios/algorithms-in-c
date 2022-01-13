@@ -1,9 +1,9 @@
 #ifndef ALGORITHM_INFORMATION_H
 #define ALGORITHM_INFORMATION_H
 
-#define		NAME_LEN		20
-#define		RUNTIME_LEN		10
-#define		CAVEAT_LEN		250
+#define		NAME_LEN		250
+#define		RUNTIME_LEN		50
+#define		CAVEAT_LEN		1000
 
 typedef struct _AlgorithmInformation
 {
@@ -12,5 +12,8 @@ typedef struct _AlgorithmInformation
 	char* Caveats;
 
 } AlgorithmInformation;
+
+AlgorithmInformation GetNewAlgorithmInfo();
+void DisposeAlgorithmInformation(AlgorithmInformation*);
 
 #endif

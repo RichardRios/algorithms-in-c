@@ -8,6 +8,5 @@ void PrintWarning(char*);
 void PrintError(char*);
 void Print(char*, char*);
 void PrintAlgorithmInformation(AlgorithmInformation*);
-AlgorithmInformation GetNewAlgorithmInfo();
 
 #endif

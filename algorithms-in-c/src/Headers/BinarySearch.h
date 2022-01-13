@@ -11,14 +11,6 @@
  * array by splitting the problem set in half. Requires that
  * elements are sorted.
  * 
- * Parameters:
- *		integerArray : Array of sorted integers
- *		toFind		 : integer to find in sorted integer array
- *		arraySize	 : count of elements in integerArray
- * 
- * Returns:
- *		true if found, false otherwise
- * 
  */
 
 typedef struct _BinarySearch

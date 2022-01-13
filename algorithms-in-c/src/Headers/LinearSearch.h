@@ -10,14 +10,6 @@
  * Algorithm that searches each element of an array for a specified element. 
  * The algorithm runs in O(N) time.
  * 
- * Parameters:
- *		integerArray - integer array
- *		toFind		 - integer to find in integerArray
- *		arrayLength  - length of the array supplied
- * 
- * Returns:
- *		true if found, false otherwise
- * 
  */
 
 typedef struct _LinearSearch

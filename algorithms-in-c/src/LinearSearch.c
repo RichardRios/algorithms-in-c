@@ -14,7 +14,6 @@ LinearSearch InitLinearSearch()
 	};
 
 	retVal.Information = GetNewAlgorithmInfo();
-
 	strcpy(retVal.Information.Name, "Linear Search");
 	strcpy(retVal.Information.Runtime, "O(N)");
 	strcpy(retVal.Information.Caveats, "None");
@@ -45,7 +44,5 @@ void PrintLinearSearchInformation(AlgorithmInformation* information)
 
 void DisposeLinearSearch(LinearSearch* linearSearch)
 {
-	free(linearSearch->Information.Name);
-	free(linearSearch->Information.Runtime);
-	free(linearSearch->Information.Caveats);
+	DisposeAlgorithmInformation(&linearSearch->Information);
 }

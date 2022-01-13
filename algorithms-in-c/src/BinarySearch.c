@@ -7,19 +7,18 @@
 
 BinarySearch InitBinarySearch()
 {
-	BinarySearch retVal =
+	BinarySearch binarySearch =
 	{
 		.Run = RunBinarySearch,
 		.PrintInformation = PrintBinarySearchInformation
 	};
 
-	retVal.Information = GetNewAlgorithmInfo();
+	binarySearch.Information = GetNewAlgorithmInfo();
+	strcpy(binarySearch.Information.Name, "Binary Search");
+	strcpy(binarySearch.Information.Runtime, "O(log N)");
+	strcpy(binarySearch.Information.Caveats, "Array must be sorted prior to running search.");
 
-	strcpy(retVal.Information.Name, "Binary Search");
-	strcpy(retVal.Information.Runtime, "O(log N)");
-	strcpy(retVal.Information.Caveats, "Array must be sorted prior to running search.");
-
-	return retVal;
+	return binarySearch;
 }
 
 bool RunBinarySearch(int* integerArray, int toFind, int arraySize)
@@ -55,7 +54,5 @@ void PrintBinarySearchInformation(AlgorithmInformation* information)
 
 void DisposeBinarySearch(BinarySearch* search)
 {
-	free(search->Information.Name);
-	free(search->Information.Runtime);
-	free(search->Information.Caveats);
+	DisposeAlgorithmInformation(&search->Information);
 }

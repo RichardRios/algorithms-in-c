@@ -45,20 +45,17 @@ void Print(char* indicator, char* msg)
 
 void PrintAlgorithmInformation(AlgorithmInformation* info)
 {
-	printf("\n\n\n");
-	printf("Algorithm: %s\n", info->Name);
-	printf("Runtime: %s\n", info->Runtime);
-	printf("Caveats: %s\n", info->Caveats);
+	char* str = (char*)calloc(CAVEAT_LEN, sizeof(char));
+	
+	sprintf(str, "Algorithm: %s\n", info->Name);
+	PrintInformation(str);
+
+	sprintf(str, "Runtime: %s\n", info->Runtime);
+	PrintInformation(str);
+
+	sprintf(str, "Caveats: %s", info->Caveats);
+	PrintInformation(str);
+
+	free(str);
 }
 
-AlgorithmInformation GetNewAlgorithmInfo()
-{
-	AlgorithmInformation information =
-	{
-		.Name = (char*)calloc(NAME_LEN, sizeof(char)),
-		.Runtime = (char*)calloc(RUNTIME_LEN, sizeof(char)),
-		.Caveats = (char*)calloc(CAVEAT_LEN, sizeof(char))
-	};
-
-	return information;
-}
